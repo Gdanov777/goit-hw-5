@@ -184,7 +184,8 @@ li {
   align-items: center;
 }
 
-.backdrop {position: fixed;
+.backdrop {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -192,54 +193,73 @@ li {
   opacity: 1;
   background-color: rgba(46, 47, 66, 0.4);
   transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1) visibility 250ms
-              cubic-bezier(0.4, 0, 0.2, 1);}
+    cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.backdrop.is-hidden {opacity: 0;
-            pointer-events: none;
-            visibility: hidden;
-            transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}   
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.window {position: absolute;
+.window {
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   width: 408px;
   height: 576px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 
-  0px 1px 3px rgba(0, 0, 0, 0.12), 
-  0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-color: var(--other-background-color);
-  transform: translate(-50%, -50%)  scale(1);
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);}
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.close-win {  position: absolute;
+.close-win {
+  position: absolute;
   top: 24px;
   right: 24px;
   width: 24px;
   height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   padding: 0;
-  margin: 0;
-  border: none;
+  color: #31d0aa;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);}      
+  background-color: var(--dark-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .close-win:hover,
-.close-win:focus {box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}
+.close-win:focus {
+  background-color: var(--brand-color);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.cross {fill: var(--title-text-color);
-stroke: #94989d;
-transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}
+.cross {
+  fill: currentColor;
+  transition: fill var(--dark-color) var(--cubic-bezier);
+}
 
-.cross:hover, .cross:focus {fill: var(--accent-color);
+.cross:hover,
+.cross:focus {
+  fill: var(--accent-color);
   stroke: var(--accent-color);
-  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.backdrop.is-hidden .window {transform: translate(-50%, -50%) scale(0.9);} 
-
-
+.backdrop.is-hidden .window {
+  transform: translate(-50%, -50%) scale(0.9);
+}
 
 .nav-list-card {
   display: flex;
@@ -299,24 +319,22 @@ transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}
   opacity: 1;
 }
 
-.header-nav-link ::before{
+.header-nav-link ::before {
   content: '';
   position: absolute;
   bottom: 0;
   width: 0;
   height: 4px;
-  background-color:var(--brand-color);                                    
+  background-color: var(--brand-color);
   transition: width 250ms;
-
 }
 
-
 .header-nav-link :hover ::before,
-.header-nav-link :focus ::before{
+.header-nav-link :focus ::before {
   color: #ffffff;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    width: 100%;
+  width: 100%;
 }
 
 .header-link:hover {
@@ -418,7 +436,7 @@ transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}
 }
 
 .card-link :hover.hidden-text,
-.card-link :focus.hidden-text{
+.card-link :focus.hidden-text {
   transform: translateY(0%);
 }
 
@@ -617,6 +635,7 @@ transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}
   display: block;
   min-width: 169px;
   margin: 0 auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-main-title:hover,
@@ -785,17 +804,12 @@ transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}
   color: var(--light-color);
 }
 
-
-
 .overlay {
   position: relative;
   overflow: hidden;
 }
 
-.overlay .modal-close:is(:hover, :focus)
-
-
-.hidden-text {
+.overlay .modal-close:is(:hover, :focus) .hidden-text {
   position: absolute;
   top: 0;
   font-size: 16px;
@@ -810,7 +824,6 @@ transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);}
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
-
 
 .backdrop {
   position: fixed;
