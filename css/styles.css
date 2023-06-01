@@ -2,6 +2,9 @@ body {
   font-family: var(--primary-font);
   background-color: var(--white-color);
   color: var(--text-color);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -10,12 +13,12 @@ h3,
 h4,
 h5,
 h6,
-p,
-ul,
-ol,
-a {
+p {
   margin: 0;
-  padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 :root {
@@ -34,15 +37,16 @@ a {
 
   --primary-font: 'Roboto', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
-
-  --indent: 24px;
-  --item: 3;
-  --anim-medium: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 ::after ::content {
@@ -56,10 +60,21 @@ a {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 button {
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 .list {
@@ -196,18 +211,6 @@ li {
   margin-right: auto;
   display: flex;
   align-items: center;
-}
-
-.cross {
-  fill: currentColor;
-  transition: fill var(--dark-color) var(--cubic-bezier);
-}
-
-.cross:hover,
-.cross:focus {
-  fill: var(--accent-color);
-  stroke: var(--accent-color);
-  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .window {
@@ -378,7 +381,7 @@ li {
   line-height: 1.5;
   letter-spacing: 0.02em;
   transform: translateY(100%);
-  transition: transform var(--anim-medium);
+  transition: transform var(--trasition);
 }
 
 .card-link :hover .hidden-text,
@@ -435,7 +438,7 @@ li {
 
 .chapter-our-team-bg {
   padding: 120px 0;
-  background: var(--light-color);
+  background-color: var(--light-color);
 }
 
 /* paragraf */
@@ -507,7 +510,6 @@ li {
   background-position: center;
   background-size: cover;
   max-width: 1440px;
-  margin: 0 auto;
 }
 
 .main-title {
@@ -619,13 +621,7 @@ li {
 .customers-item :hover,
 .customers-item :focus {
   border-color: #404bbf;
-  color: #404bbf;
-}
-
-.icon-customers :hover,
-.icon-customers :focus {
-  border-color: #404bbf;
-  color: #404bbf;
+  background-color: #4d5ae5;
 }
 
 .icon-customers {
@@ -635,7 +631,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--subtext-color);
+  color: #4d5ae5;
   border: 1px solid var(--subtext-color);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -645,6 +641,11 @@ li {
   padding-top: 120px;
   padding-bottom: 120px;
 }
+
+.customers-icon{
+  fill: var(--text-color);
+}
+
 
 /* footer */
 
@@ -667,13 +668,16 @@ li {
   margin-right: 120px;
 }
 
+
+.footer-icon,.team-soc-icon{
+  fill: #ffffff;
+}
 .portfolio-title {
   margin-bottom: 8px;
 
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  letter-spacing: var(--typical-ls);
   color: var(--dark-color);
 }
 
@@ -750,7 +754,7 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: opaciti var(--anim-medium), visibility var(--anim-medium);
+  transition: opaciti var(--trasition), visibility var(--trasition);
 }
 
 .backdrop.is-hidden {
@@ -770,7 +774,7 @@ li {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform var(--anim-medium);
+  transition: transform var(--trasition);
 }
 
 .backdrop.is-hidden .modal {
@@ -791,8 +795,8 @@ li {
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0;
-  transition: background-color var(--anim-medium), color var(--anim-medium), border-color var(--anim-medium);
-  
+  transition: background-color var(--trasition), color var(--trasition),
+    border-color var(--trasition);
 }
 
 .modal-close :hover,
@@ -810,5 +814,3 @@ li {
 .modal-close :focus .modal-close-icon {
   fill: #ffffff;
 }
-
-
