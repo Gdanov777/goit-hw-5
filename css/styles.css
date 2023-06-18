@@ -234,8 +234,8 @@ li {
   letter-spacing: 0.02em;
   display: block;
   position: relative;
-  color: var(--text-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-nav-link .link:hover,
@@ -247,6 +247,7 @@ li {
   content: '';
   position: absolute;
   left: 0;
+  bottom: -1px;
   display: block;
   width: 100%;
 
@@ -282,6 +283,7 @@ li {
 
 .contact-paragraf {
   color: var(--text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-paragraf:hover,
@@ -373,6 +375,12 @@ li {
   letter-spacing: 0.02em;
   transform: translateY(100%);
   transition: transform var(--trasition);
+}
+
+.card-link :hover,
+.card-link :focus {
+  box-shadow: зі значенням 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .card-link :hover .hidden-text,
@@ -770,6 +778,7 @@ li {
   right: 24px;
   width: 24px;
   height: 24px;
+  color: #2e2f42;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -779,7 +788,6 @@ li {
   padding: 0;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: currentColor;
 }
 
 .modal-close:hover,
@@ -795,6 +803,6 @@ li {
 }
 
 .modal-close:hover.modal-close-icon,
-.modal-close:focus.modal-close-icon{
+.modal-close:focus.modal-close-icon {
   fill: #ffffff;
 }
