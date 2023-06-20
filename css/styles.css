@@ -254,8 +254,8 @@ li {
   bottom: -1px;
 }
 
-.header-nav-link .link:hover,
-.header-nav-link .link:focus {
+.header-nav-link-current .link:hover,
+.header-nav-link-current .link:focus {
   color: var(--action-color);
 }
 
