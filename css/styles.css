@@ -820,7 +820,7 @@ li {
   margin-bottom: 4px;
 }
 
-.modal-field-text{
+.modal-field-text {
   margin-bottom: 16px;
 }
 
@@ -846,16 +846,17 @@ li {
   margin-bottom: 4px;
 }
 .input-modal {
-  border: 1px solid var(--border-form-modal);
-  border-radius: 4px;
   width: 100%;
   height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
   background-color: transparent;
   padding-left: 38px;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.input-modal :hover,
 .input-modal:focus {
   border-color: #4d5ae5;
 }
@@ -873,26 +874,24 @@ li {
 }
 
 .text-modal {
-  display: block;
-  border: 1px solid var(--border-form-modal);
-  border-radius: 4px;
-  outline: transparent;
   width: 100%;
   height: 120px;
-  resize: none;
-  font-family: var(--primary-font);
-  font-weight: 400;
   font-size: 12px;
-  letter-spacing: 0.04em;
   line-height: 1.17;
-  padding: 8px 16px;
+  letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
-  transition: border-color cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-form-modal);
+  border-radius: 4px;
   background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
+  resize: none;
+  transition: border-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.privacy-wrap{
-  margin-bottom: 24px;
+.text-modal:focus {
+  border: 1px solid var(--brand-color);
+  transition: var(--transition);
 }
 
 .text-modal::placeholder {
@@ -903,9 +902,8 @@ li {
   color: var(--contact-footer);
 }
 
-.text-modal:focus {
-  border: 1px solid var(--brand-color);
-  transition: var(--transition);
+.privacy-wrap {
+  margin-bottom: 24px;
 }
 
 /* checbox */
@@ -914,7 +912,7 @@ li {
   display: block;
   font-size: 12px;
   line-height: 1.17;
-  letter-spacing: 0.04em; 
+  letter-spacing: 0.04em;
   color: var(--subtext-color);
 }
 
