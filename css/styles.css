@@ -882,13 +882,13 @@ li {
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
-  border: 1px solid var(--border-form-modal);
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   background-color: transparent;
   padding: 8px 16px;
   outline: transparent;
   resize: none;
-  transition: border-color cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .text-modal:focus {
@@ -950,23 +950,9 @@ li {
 }
 
 .check-modal:checked ~ .modal-ocception {
-  fill: #ffffff;
-  display: block;
+  background-color: var(--action-color);
   border: none;
-  background-color: #4d5ae5;
-  background-image: url(images/check.svg);
-}
-
-.check-modal:focus .modal-ocception {
-  box-shadow: 0 0 0 0.1em #4a90e2, 0 0 0 0.2em #7ed321;
-}
-
-.check-modal:disabled ~ .modal-ocception {
-  box-shadow: 0 0 0 0.1em #9b9b9b;
-}
-
-.check-modal:checked:disabled ~ .modal-ocception {
-  background-color: #9b9b9b;
+  fill: var(--light-color);
 }
 
 .link-modal {
